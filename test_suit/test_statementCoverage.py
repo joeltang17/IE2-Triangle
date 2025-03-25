@@ -37,5 +37,10 @@ class TriangleTest(unittest.TestCase):
         expected = Triangle.Type.ISOSCELES
         self.assertEqual(actual, expected)
 
+    def testInvalidLastSide(self):
+        actual = Triangle.classify(3, 3, 10)
+        expected = Triangle.Type.INVALID
+        self.assertEqual(actual, expected)
+
 if __name__ == '__main__':
     unittest.main()
